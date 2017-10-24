@@ -25,6 +25,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'selenium'
+  gem 'simplecov'
   gem 'rubocop'
   gem 'brakeman'
 end

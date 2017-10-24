@@ -17,3 +17,5 @@
 /yarn-error.log
 
 .byebug_history
+coverage/*
+spec/examples.txt
