@@ -3,12 +3,7 @@ language: ruby
 rvm:
   - 2.3.3
 env:
-  - DB_HOST=localhost
-  - DB_USER=postgres
-  - DB_PASS=''
   - DB=postgresql
-  - RAILS_ENV=test
-  - MAIL_FROM=no-reply@site.local
 before_script:
   - bundle install
   - bundle exec rake db:create
