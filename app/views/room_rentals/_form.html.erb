@@ -1,0 +1,52 @@
+<%= form_with(model: room_rental, local: true) do |form| %>
+  <% if room_rental.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room_rental.errors.count, "error") %> prohibited this room_rental from being saved:</h2>
+
+      <ul>
+      <% room_rental.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :room_rental_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room_id %>
+    <%= form.number_field :room_id, id: :room_rental_room_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date, id: :room_rental_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.time_select :start_time, id: :room_rental_start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.time_select :end_time, id: :room_rental_end_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_area :note, id: :room_rental_note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :paid_amount %>
+    <%= form.text_field :paid_amount, id: :room_rental_paid_amount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

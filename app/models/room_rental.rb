@@ -1,0 +1,2 @@
+class RoomRental < ApplicationRecord
+end

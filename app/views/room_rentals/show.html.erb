@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @room_rental.user_id %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @room_rental.room_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @room_rental.date %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @room_rental.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @room_rental.end_time %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @room_rental.note %>
+</p>
+
+<p>
+  <strong>Paid amount:</strong>
+  <%= @room_rental.paid_amount %>
+</p>
+
+<%= link_to 'Edit', edit_room_rental_path(@room_rental) %> |
+<%= link_to 'Back', room_rentals_path %>
