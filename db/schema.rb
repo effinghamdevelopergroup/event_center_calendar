@@ -10,16 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025230018) do
+ActiveRecord::Schema.define(version: 20171025232927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "room_rentals", force: :cascade do |t|
+    t.integer "room_id", null: false
+    t.integer "user_id", null: false
+    t.date "rented_date", null: false
+    t.time "start_time", null: false
+    t.time "end_time", null: false
+    t.boolean "all_day", default: false, null: false
+    t.boolean "approved", default: false, null: false
+    t.decimal "amount_paid", precision: 5, scale: 2, default: "0.0", null: false
+    t.text "notes", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rooms", force: :cascade do |t|
     t.string "name", null: false
     t.integer "capacity", default: 0, null: false
-    t.decimal "rate", precision: 3, scale: 2, default: "0.0", null: false
-    t.decimal "discount", precision: 2, scale: 2, default: "0.0", null: false
+    t.decimal "rate", precision: 5, scale: 2, default: "0.0", null: false
+    t.decimal "discount", precision: 4, scale: 2, default: "0.0", null: false
     t.text "notes", default: "", null: false
     t.boolean "active", default: false, null: false
     t.datetime "created_at", null: false
@@ -45,4 +59,6 @@ ActiveRecord::Schema.define(version: 20171025230018) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "room_rentals", "rooms"
+  add_foreign_key "room_rentals", "users"
 end
