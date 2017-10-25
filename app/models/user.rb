@@ -1,3 +1,4 @@
+# model to authenitcate for the application
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
