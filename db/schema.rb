@@ -10,11 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 ActiveRecord::Schema.define(version: 20171025034310) do
+=======
+ActiveRecord::Schema.define(version: 20171025050906) do
+>>>>>>> Stashed changes
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< Updated upstream
+=======
+  create_table "room_rentals", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "room_id"
+    t.datetime "date"
+    t.time "start_time"
+    t.time "end_time"
+    t.text "note"
+    t.decimal "paid_amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.integer "capacity"
+    t.decimal "rate"
+    t.decimal "discount"
+    t.text "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> Stashed changes
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
