@@ -1,0 +1,14 @@
+# This is for CI, please do not edit before talking to Joey or Ryan
+language: ruby
+rvm:
+  - 2.3.3
+env:
+  - DB=postgresql
+before_script:
+  - bundle install
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+script:
+  - bundle exec rspec
+  - bundle exec brakeman
+  - bundle exec rubocop
