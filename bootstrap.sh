@@ -54,6 +54,7 @@ GRANT ALL PRIVILEGES ON inexistent_activerecord_unittest.* to 'rails'@'localhost
 SQL
 
 install 'Nokogiri dependencies' libxml2 libxml2-dev libxslt1-dev
+install 'Nio4r dependencies' ruby-dev zlib1g-dev liblzma-dev
 install 'Blade dependencies' libncurses5-dev
 install 'ExecJS runtime' nodejs
 
